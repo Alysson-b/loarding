@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+.loading-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.n-loading {
+    width: 60px;
+    height: 60px;
+}
+.n-path {
+    stroke-dasharray: 300;
+    stroke-dashoffset: 300;
+    animation: dash 2s linear infinite;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+.loading-text {
+    font-size: 24px;
+    margin-left: 15px;
+    color: #333;
+}
+.dots {
+    display: inline-block;
+    width: 30px;
+}
+.dots::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+@keyframes dots {
+    0%, 20% { content: ''; }
+    40% { content: '.'; }
+    60% { content: '..'; }
+    80%, 100% { content: '...'; }
+}
